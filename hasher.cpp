@@ -1,3 +1,4 @@
+//hasher from github branch
 #include "hasher.h"
 
 std::mutex report_mutex;
