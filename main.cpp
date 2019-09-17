@@ -21,7 +21,7 @@ int main()
         std::cout << it << std::endl;
     }
 
-    // threads pool
+    //something like threads pool
     std::vector<std::thread> threads(nthreads);
 
     // for (unsigned i = 0; i < nthreads; ++i)
@@ -57,14 +57,10 @@ int main()
         std::cout << it << std::endl;
     }
 
-    // for (unsigned i = 0; i < nthreads; ++i)
     for (unsigned i = 0; i < nthreads; ++i)
     {
         threads[i] =
             (std::thread(h, i, std::ref(input_data), std::ref(result_data)));
-        //        threads.push_back(
-        //            std::thread(h, i, std::ref(input_data),
-        //            std::ref(result_data)));
     }
     for (auto& t : threads)
         t.join();
